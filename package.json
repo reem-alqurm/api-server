@@ -1,0 +1,29 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "[Herouko](https://reem-basic-api-server.herokuapp.com/food) # Github : [Github](https://github.com/reem-alqurm/basic-api-server) # pull request : [Pull Request](https://github.com/reem-alqurm/basic-api-server/pulls?q=is%3Apr+is%3Aclosed) # Github actions : [Github Actions](https://github.com/reem-alqurm/basic-api-server/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reem-alqurm/api-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reem-alqurm/api-server/issues"
+  },
+  "homepage": "https://github.com/reem-alqurm/api-server#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.1.0",
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
