@@ -2,6 +2,8 @@
 
 const supertest = require('supertest');
 const server = require('../src/server.js');
+require('@code-fellows/supergoose');
+
 const request = supertest(server.app);
 let id;
 describe('Testing server', () => {
@@ -25,9 +27,9 @@ describe('Testing server', () => {
       catugary: "SeaFood"
     })
     expect(response.status).toEqual(201);
-    expect(response.body.record.name).toEqual("Salmofish");
-    expect(response.body.record.catugary).toEqual("SeaFood");
-    id = response.body.id
+    expect(response.body.name).toEqual("Salmofish");
+    expect(response.body.catugary).toEqual("SeaFood");
+    id = response.body._id
   });
   // Update a record 
   it('Update a Food record', async () => {
@@ -36,22 +38,22 @@ describe('Testing server', () => {
       catugary: "SeaFood"
     });
     expect(response.status).toEqual(200);
-    expect(response.body.record.name).toEqual('Salmofish');
-    expect(response.body.record.catugary).toEqual('SeaFood');
+    expect(response.body.name).toEqual('Salmofish');
+    expect(response.body.catugary).toEqual('SeaFood');
   });
   // Read a record
   it('Read a Food record', async () => {
     const response = await request.get(`/food/${id}`);
     expect(response.status).toEqual(200);
-    expect(response.body.record.name).toEqual('Salmofish');
-    expect(response.body.record.catugary).toEqual('SeaFood');
+    expect(response.body.name).toEqual('Salmofish');
+    expect(response.body.catugary).toEqual('SeaFood');
   });
   // Read all Records
   it('Read all Food record', async () => {
     const response = await request.get('/food/');
     expect(response.status).toEqual(200);
-    expect(response.body[0].record.name).toEqual('Salmofish');
-    expect(response.body[0].record.catugary).toEqual('SeaFood');
+    expect(response.body[0].name).toEqual('Salmofish');
+    expect(response.body[0].catugary).toEqual('SeaFood');
   });
   // Delete a record
   it('Delete a Food record', async () => {
@@ -66,9 +68,9 @@ describe('Testing server', () => {
       catugary: "WomenClothing"
     })
     expect(response.status).toEqual(201);
-    expect(response.body.record.name).toEqual("highwaistJeans");
-    expect(response.body.record.catugary).toEqual("WomenClothing");
-    id = response.body.id
+    expect(response.body.name).toEqual("highwaistJeans");
+    expect(response.body.catugary).toEqual("WomenClothing");
+    id = response.body._id
   });
   // Update a record 
   it('Update a Clothes record', async () => {
@@ -77,22 +79,22 @@ describe('Testing server', () => {
       catugary: "WomenClothing"
     });
     expect(response.status).toEqual(200);
-    expect(response.body.record.name).toEqual('highwaistJeans');
-    expect(response.body.record.catugary).toEqual('WomenClothing');
+    expect(response.body.name).toEqual('highwaistJeans');
+    expect(response.body.catugary).toEqual('WomenClothing');
   });
   // Read a record
   it('Read a Clothes record', async () => {
     const response = await request.get(`/food/${id}`);
     expect(response.status).toEqual(200);
-    expect(response.body.record.name).toEqual('highwaistJeans');
-    expect(response.body.record.catugary).toEqual('WomenClothing');
+    expect(response.body.name).toEqual('highwaistJeans');
+    expect(response.body.catugary).toEqual('WomenClothing');
   });
   // Read all Records
   it('Read all Clothes record', async () => {
     const response = await request.get('/food/');
     expect(response.status).toEqual(200);
-    expect(response.body[0].record.name).toEqual('highwaistJeans');
-    expect(response.body[0].record.catugary).toEqual('WomenClothing');
+    expect(response.body[0].name).toEqual('highwaistJeans');
+    expect(response.body[0].catugary).toEqual('WomenClothing');
   });
   // Delete a record
   it('Delete a Clothes record', async () => {
