@@ -4,7 +4,8 @@
   "description": "[Herouko](https://reem-basic-api-server.herokuapp.com/food) # Github : [Github](https://github.com/reem-alqurm/basic-api-server) # pull request : [Pull Request](https://github.com/reem-alqurm/basic-api-server/pulls?q=is%3Apr+is%3Aclosed) # Github actions : [Github Actions](https://github.com/reem-alqurm/basic-api-server/actions)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
